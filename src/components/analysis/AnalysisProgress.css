@@ -1,0 +1,149 @@
+.analysis-progress {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.brain-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.brain-pulse {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  animation: brainBounce 2s ease-in-out infinite;
+}
+
+.brain-emoji {
+  font-size: 2.5rem;
+}
+
+.ripples {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  animation: rippleOut 2.5s ease-out infinite;
+  width: 72px;
+  height: 72px;
+}
+
+.ripple.delay-1 { animation-delay: 0.8s; }
+.ripple.delay-2 { animation-delay: 1.6s; }
+
+@keyframes brainBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rippleOut {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Progress Bar */
+.progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar-track {
+  flex-grow: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.progress-pct {
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Steps */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.step-item.done {
+  color: var(--success);
+}
+
+.step-item.active {
+  color: var(--text-primary);
+}
+
+.step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.step-item.done .step-dot {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.step-item.active .step-dot {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.dot-spinner {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  animation: dotPulse 1s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

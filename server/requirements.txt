@@ -1,0 +1,6 @@
+flask
+flask-sqlalchemy
+flask-dance[sqla]
+flask-cors
+python-dotenv
+blinker
