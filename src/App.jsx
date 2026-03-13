@@ -101,12 +101,24 @@ function AnalyzerView() {
       );
 
       // Save result to backend
+      // For COMPARISON: score = winner's totalScore, summary = comparisonSummary
+      // For LEADERBOARD: score = top-ranked PPT's totalScore, summary = top PPT's summary
+      const isComp = results.isComparison;
+      const compScore = isComp
+        ? (results.recommendedWinner === 'B'
+            ? results.presentationB?.totalScore
+            : results.presentationA?.totalScore) ?? 0
+        : results.rankings?.[0]?.totalScore ?? 0;
+      const compSummary = isComp
+        ? results.comparisonSummary || ''
+        : results.rankings?.[0]?.summary || '';
+
       const comparisonPayload = {
         type: state.analysisMode,
         ppt1_name: state.referenceFile.name,
-        ppt2_name: state.analysisMode === 'COMPARISON' ? state.contenderFiles[0].name : `${state.contenderFiles.length} Contenders`,
-        score: results.isComparison ? results.score : results.rankings[0]?.score || 0,
-        summary: results.isComparison ? results.summary : results.summary,
+        ppt2_name: isComp ? state.contenderFiles[0].name : `${state.contenderFiles.length} Contenders`,
+        score: compScore,
+        summary: compSummary,
         full_result: results
       };
 

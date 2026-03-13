@@ -333,10 +333,11 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* Footer */}
             <footer className="bg-brutalist py-16 px-6 text-center border-t border-subtle">
                 <FadeInSection>
-                    <div className="font-grotesk text-2xl font-bold text-white mb-2 glassy-text-hover">✦ Kaun<span className="accent-purple">Jeeta</span></div>
+                    <div className="flex justify-center mb-6">
+                        <img src="/logo.png" alt="KaunJeeta Logo" className="h-32 md:h-40 object-contain hover:scale-105 transition-transform duration-300" />
+                    </div>
                     <p className="font-mono text-muted mb-8 text-sm md:text-base">Ek hi click mein pata karo — kaun jeeta!</p>
                     <div className="text-xs font-mono text-muted/60 uppercase tracking-widest">Made with ❤️ for hackathon organizers and Students</div>
                 </FadeInSection>

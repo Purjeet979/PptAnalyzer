@@ -12,17 +12,14 @@ export default function Header() {
         .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
         .font-mono { font-family: 'Space Mono', monospace; }
       `}</style>
-      <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-[#0a0a0f] border-b border-[#1f1f2e] flex items-center px-4 md:px-6 w-full">
+      <header className="fixed top-0 left-0 right-0 z-50 h-24 md:h-28 bg-[#0a0a0f] border-b border-[#1f1f2e] flex items-center px-4 md:px-6 w-full">
         <div className="flex items-center justify-between w-full mx-auto">
           {/* Left: Logo */}
           <div 
             className="flex items-center gap-2 cursor-pointer group" 
             onClick={() => window.location.href = '/'}
           >
-            <div className="text-xl group-hover:rotate-12 transition-transform duration-300 select-none text-white">✦</div>
-            <h1 className="text-xl md:text-2xl font-grotesk font-bold tracking-tight text-white glassy-text-hover">
-              Kaun<span className="text-[#7c3aed]">Jeeta</span>
-            </h1>
+            <img src="/logo.png" alt="KaunJeeta Logo" className="h-20 md:h-28 object-contain hover:scale-105 transition-transform duration-300" />
           </div>
 
           {/* Right: Actions */}
@@ -85,7 +82,7 @@ export default function Header() {
         </div>
       </header>
       {/* Spacer to push content down because header is fixed */}
-      <div className="h-16 w-full"></div>
+      <div className="h-24 md:h-28 w-full"></div>
     </>
   );
 }
