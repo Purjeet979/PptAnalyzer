@@ -7,14 +7,15 @@ AI-powered hackathon presentation analyzer. Upload karo presentations, reference
 ![MIT License](https://img.shields.io/badge/License-MIT-purple.svg)
 ![React](https://img.shields.io/badge/React-Vite-blue.svg)
 ![Python](https://img.shields.io/badge/Backend-Python-green.svg)
+![Groq](https://img.shields.io/badge/AI-Groq-orange.svg)
 
 ---
 
 ## ✨ Features
 
-- 📊 **AI-Powered Analysis** — Gemini AI se presentations ka deep analysis
+- 📊 **AI-Powered Analysis** — Groq AI se presentations ka deep analysis
 - 🎯 **Reference Comparison** — Ek reference PPT se baaki sab compare karo
-- ⚡ **Instant Results** — Seconds mein 200+ presentations analyze karo
+- ⚡ **Blazing Fast** — Groq ki speed se seconds mein results
 - 📈 **Detailed Scoring** — Har presentation ka breakdown milega
 - 🕐 **History** — Purane comparisons save rehte hain (login required)
 - 🆓 **Free to Use** — Pehli baar bina login ke try karo
@@ -27,7 +28,7 @@ AI-powered hackathon presentation analyzer. Upload karo presentations, reference
 
 - Node.js 18+
 - Python 3.9+
-- Gemini API Key ([Get here](https://makersuite.google.com/app/apikey))
+- Groq API Key ([Get here](https://console.groq.com))
 
 ### Installation
 ```bash
@@ -47,7 +48,7 @@ pip install -r requirements.txt
 
 `.env` file banao root mein:
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 SECRET_KEY=your_flask_secret_key
@@ -73,7 +74,7 @@ App open hoga: `http://localhost:5173`
 |-------|-----------|
 | Frontend | React + Vite + Tailwind CSS |
 | Backend | Python + Flask |
-| AI | Google Gemini API |
+| AI | Groq API (Llama 3) |
 | Database | SQLite |
 | Auth | Google OAuth |
 
@@ -89,7 +90,7 @@ App open hoga: `http://localhost:5173`
 
 ## 🤝 Contributing
 
-Pull requests welcome hain! Koi bhi feature add karna ho ya bug fix karna ho:
+Pull requests welcome hain!
 
 1. Fork karo
 2. Branch banao (`git checkout -b feature/AmazingFeature`)
